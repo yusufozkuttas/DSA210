@@ -3,11 +3,11 @@ Yusuf Arif Özkuttaş 32097 Section D
 
 ## Project Overview
 
-This project explores how **global geopolitical risk (GPR)** influences the behavior of key financial assets — specifically **gold** and **Bitcoin**. Using three datasets that capture market prices and geopolitical risk indices, the project investigates whether geopolitical uncertainty affects volatility, returns, and safe-haven dynamics.
+This project explores how global geopolitical risk (GPR) influences the behavior of key financial assets — specifically gold and Bitcoin. Using three datasets that capture market prices and geopolitical risk indices, the project investigates whether geopolitical uncertainty affects volatility, returns, and safe-haven dynamics.
 
 By integrating cryptocurrency, commodity, and macroeconomic data, this study aims to bridge economic theory with data science practice, offering insights into how traditional and digital assets respond under global stress conditions.
 
----
+
 
 ## Objectives
 
@@ -20,18 +20,18 @@ By integrating cryptocurrency, commodity, and macroeconomic data, this study aim
 3. **Evaluate Market Dynamics During Crises**  
    Identify whether Bitcoin’s response to global uncertainty has evolved in recent years compared to gold.
 
----
+
 
 ## Motivation
 
-Global markets often react sharply to political instability, wars, and global uncertainty. Gold is historically known as a stable store of value, while Bitcoin’s role as a potential “digital gold” is still being debated.  
+Global markets often react to political instability, wars, and global uncertainty. Gold is historically known as a stable store of value, while Bitcoin’s role as a potential “digital gold” is still being debated.  
 
-Understanding how these assets react to **geopolitical stress** provides valuable information for:
-- **Investors**, seeking portfolio hedging strategies.  
-- **Economists**, analyzing market psychology and capital flow.  
-- **Policy-makers**, assessing how global shocks impact new financial systems.
+Understanding how these assets react to geopolitical stress provides valuable information for:
+Investors, seeking portfolio hedging strategies.  
+**Economists, analyzing market psychology and capital flow.  
+**Policy-makers, assessing how global shocks impact new financial systems.
 
-This project merges **macroeconomic theory and modern data analytics** to provide a quantitative view of these relationships.
+This project merges macroeconomic theory and modern data analytics to provide a quantitative view of these relationships.
 
 ---
 
@@ -71,30 +71,30 @@ This project integrates three real-world datasets:
 
 *(This hypothesis will be tested using correlation analysis, t-tests, and GARCH modeling to examine whether gold and Bitcoin exhibit safe-haven or risk-sensitive behavior during periods of elevated geopolitical tension.)*
 
----
+
 
 ## Analysis Plan
 
-1. **Data Cleaning and Preprocessing**  
+ **Data Cleaning and Preprocessing**  
    - Convert timestamps to daily frequency  
    - Handle missing values and align datasets by date  
    - Calculate daily returns and volatility measures  
 
-2. **Exploratory Data Analysis (EDA)**  
+ **Exploratory Data Analysis (EDA)**  
    - Visualize trends and distributions  
    - Compute rolling correlations (GPR vs. BTC/Gold)  
    - Identify major spikes linked to global events  
 
-3. **Statistical Testing**  
+ **Statistical Testing**  
    - Correlation and hypothesis tests for each H₀/H₁  
    - Granger causality tests for directional relationships  
 
-4. **Visualization and Interpretation**  
+ **Visualization and Interpretation**  
    - Time-series plots and volatility heatmaps  
    - Feature importance rankings  
    - Rolling correlation and crisis-period comparison  
 
----
+
 
 ## Findings and Insights
 
