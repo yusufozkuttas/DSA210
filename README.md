@@ -59,7 +59,7 @@ This project integrates three real-world datasets:
 - **Key Features:**
   - Monthly geopolitical risk scores  
   - Global aggregation from international news coverage  
-- **Source:** (https://www2.bc.edu/matteo-iacoviello/gpr.htm)](https://www.matteoiacoviello.com/gpr.htm)
+- **Source:** [(https://www2.bc.edu/matteo-iacoviello/gpr.htm)](https://www.matteoiacoviello.com/gpr.htm)](https://www.matteoiacoviello.com/gpr.htm)
 
 ---
 
