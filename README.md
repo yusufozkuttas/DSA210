@@ -14,13 +14,10 @@ By integrating cryptocurrency, commodity, and macroeconomic data, this study aim
 1. **Quantify Risk–Return Relationships**  
    Measure how fluctuations in the Geopolitical Risk Index (GPR) influence the daily returns and volatility of Bitcoin and gold.
 
-2. **Compare Asset Sensitivity BUNUÇIKARABİLİRSİN!!!**  
-   Evaluate whether gold or Bitcoin behaves more like a “safe-haven” asset during periods of elevated geopolitical tension.
-
-3. **Predict Volatility Using Machine Learning**  
+2. **Predict Volatility Using Machine Learning**  
    Build models that use GPR and lagged market indicators to predict daily volatility.
 
-4. **Evaluate Market Dynamics During Crises**  
+3. **Evaluate Market Dynamics During Crises**  
    Identify whether Bitcoin’s response to global uncertainty has evolved in recent years compared to gold.
 
 ---
