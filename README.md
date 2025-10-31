@@ -16,11 +16,8 @@ By integrating cryptocurrency, commodity, and macroeconomic data, this study aim
 
 2. **Compare Asset Sensitivity**  
    Evaluate whether gold or Bitcoin behaves more like a “safe-haven” asset during periods of elevated geopolitical tension.
-
-3. **Predict Volatility Using Machine Learning**  
-   Build models that use GPR and lagged market indicators to predict daily volatility.
-
-4. **Evaluate Market Dynamics During Crises**  
+   
+3. **Evaluate Market Dynamics During Crises**  
    Identify whether Bitcoin’s response to global uncertainty has evolved in recent years compared to gold.
 
 ---
@@ -62,31 +59,17 @@ This project integrates three real-world datasets:
 - **Key Features:**
   - Monthly geopolitical risk scores  
   - Global aggregation from international news coverage  
-- **Source:** [https://www2.bc.edu/matteo-iacoviello/gpr.htm](https://www2.bc.edu/matteo-iacoviello/gpr.htm)
+- **Source:** [(https://www2.bc.edu/matteo-iacoviello/gpr.htm)](https://www.matteoiacoviello.com/gpr.htm)](https://www.matteoiacoviello.com/gpr.htm)
 
 ---
 
-## Hypotheses
+## Hypothesis
 
-1. **Geopolitical Risk and Gold Prices**  
-   - **H₀:** GPR levels have no significant effect on gold prices.  
-   - **H₁:** Increases in GPR are associated with higher gold prices.  
-   *(Tested via Pearson correlation and t-test)*
+**Impact of Geopolitical Risk on Gold and Bitcoin**  
+- **H₀ (Null Hypothesis):** Geopolitical Risk Index (GPR) levels have no significant effect on gold prices or Bitcoin volatility.  
+- **H₁ (Alternative Hypothesis):** Increases in the Geopolitical Risk Index (GPR) are associated with higher gold prices and increased Bitcoin volatility.  
 
-2. **Geopolitical Risk and Bitcoin Volatility**  
-   - **H₀:** GPR has no significant effect on Bitcoin volatility.  
-   - **H₁:** Rising GPR increases Bitcoin volatility.  
-   *(Tested via variance tests and GARCH models)*
-
-3. **Safe-Haven Comparison**  
-   - **H₀:** There is no difference between gold and Bitcoin’s reactions to geopolitical risk.  
-   - **H₁:** Gold reacts more strongly and consistently to GPR changes than Bitcoin.  
-   *(Tested via two-sample t-tests and rolling correlation analysis)*
-
-4. **Predictive Power of GPR**  
-   - **H₀:** Including GPR in machine learning models does not improve volatility prediction.  
-   - **H₁:** Adding GPR significantly improves volatility prediction accuracy.  
-   *(Evaluated via Random Forest/XGBoost model performance)*
+*(This hypothesis will be tested using correlation analysis, t-tests, and GARCH modeling to examine whether gold and Bitcoin exhibit safe-haven or risk-sensitive behavior during periods of elevated geopolitical tension.)*
 
 ---
 
@@ -106,12 +89,7 @@ This project integrates three real-world datasets:
    - Correlation and hypothesis tests for each H₀/H₁  
    - Granger causality tests for directional relationships  
 
-4. **Machine Learning Prediction**  
-   - Train regression models (Random Forest, XGBoost)  
-   - Evaluate prediction performance (MAE, R²)  
-   - Compare baseline vs. GPR-augmented models  
-
-5. **Visualization and Interpretation**  
+4. **Visualization and Interpretation**  
    - Time-series plots and volatility heatmaps  
    - Feature importance rankings  
    - Rolling correlation and crisis-period comparison  
