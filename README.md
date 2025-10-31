@@ -89,12 +89,7 @@ This project integrates three real-world datasets:
    - Correlation and hypothesis tests for each H₀/H₁  
    - Granger causality tests for directional relationships  
 
-4. **Machine Learning Prediction**  
-   - Train regression models (Random Forest, XGBoost)  
-   - Evaluate prediction performance (MAE, R²)  
-   - Compare baseline vs. GPR-augmented models  
-
-5. **Visualization and Interpretation**  
+4. **Visualization and Interpretation**  
    - Time-series plots and volatility heatmaps  
    - Feature importance rankings  
    - Rolling correlation and crisis-period comparison  
