@@ -66,27 +66,13 @@ This project integrates three real-world datasets:
 
 ---
 
-## Hypotheses TEK HYPOTHESİS YAP!!!1
+## Hypothesis
 
-1. **Geopolitical Risk and Gold Prices**  
-   - **H₀:** GPR levels have no significant effect on gold prices.  
-   - **H₁:** Increases in GPR are associated with higher gold prices.  
-   *(Tested via Pearson correlation and t-test)*
+**Impact of Geopolitical Risk on Gold and Bitcoin**  
+- **H₀ (Null Hypothesis):** Geopolitical Risk Index (GPR) levels have no significant effect on gold prices or Bitcoin volatility.  
+- **H₁ (Alternative Hypothesis):** Increases in the Geopolitical Risk Index (GPR) are associated with higher gold prices and increased Bitcoin volatility.  
 
-2. **Geopolitical Risk and Bitcoin Volatility**  
-   - **H₀:** GPR has no significant effect on Bitcoin volatility.  
-   - **H₁:** Rising GPR increases Bitcoin volatility.  
-   *(Tested via variance tests and GARCH models)*
-
-3. **Safe-Haven Comparison**  
-   - **H₀:** There is no difference between gold and Bitcoin’s reactions to geopolitical risk.  
-   - **H₁:** Gold reacts more strongly and consistently to GPR changes than Bitcoin.  
-   *(Tested via two-sample t-tests and rolling correlation analysis)*
-
-4. **Predictive Power of GPR**  
-   - **H₀:** Including GPR in machine learning models does not improve volatility prediction.  
-   - **H₁:** Adding GPR significantly improves volatility prediction accuracy.  
-   *(Evaluated via Random Forest/XGBoost model performance)*
+*(This hypothesis will be tested using correlation analysis, t-tests, and GARCH modeling to examine whether gold and Bitcoin exhibit safe-haven or risk-sensitive behavior during periods of elevated geopolitical tension.)*
 
 ---
 
