@@ -1,170 +1,128 @@
-# DSA210
-for DSA 210 project
+Yusuf Arif Özkuttaş 32097 Section D
+#  Geopolitical Risk and Financial Assets – DSA210 Project
 
+## Project Overview
 
-# 💱 Zara Sales Analysis: The Impact of Exchange Rate and Inflation on Sales Volume
+This project explores how **global geopolitical risk (GPR)** influences the behavior of key financial assets — specifically **gold** and **Bitcoin**. Using three datasets that capture market prices and geopolitical risk indices, the project investigates whether geopolitical uncertainty affects volatility, returns, and safe-haven dynamics.
 
-## 🎯 Motivation
-
-In today’s globalized retail environment, **macroeconomic indicators** such as currency fluctuations and inflation have a profound effect on consumer purchasing behavior.  
-For international fashion brands like **Zara**, which imports materials and adjusts prices dynamically, these economic variables can directly influence sales volume, profit margins, and inventory strategy.
-
-The goal of this project is to analyze whether **exchange rate and inflation levels** significantly impact Zara’s **sales volume** over time.  
-By linking store-level sales with macroeconomic data, the project aims to uncover patterns in how economic volatility affects retail performance and consumer behavior.
-
-This research contributes to **data-driven retail economics**, combining financial and retail data to support smarter pricing and supply-chain decisions.
+By integrating cryptocurrency, commodity, and macroeconomic data, this study aims to bridge economic theory with data science practice, offering insights into how traditional and digital assets respond under global stress conditions.
 
 ---
 
-## 📊 Data Source
+## Objectives
 
-This project integrates **two main datasets**:  
-1. **Primary Dataset — `Zara_sales_EDA.csv`**  
-   - Provided manually for this project.  
-   - Contains transactional and product-level information such as:
-     - `Date`, `Category`, `Price`, `Units_Sold`, `Store_Location`, and `Total_Sales`.  
-   - The data covers several months of sales from Zara stores, sufficient to identify temporal trends and seasonality.  
+1. **Quantify Risk–Return Relationships**  
+   Measure how fluctuations in the Geopolitical Risk Index (GPR) influence the daily returns and volatility of Bitcoin and gold.
 
-2. **Enriched Dataset — Macroeconomic Indicators**
-   - Data sourced from **OECD** and **Central Bank of Turkey (TCMB)** open APIs.  
-   - Variables collected:
-     - `Exchange Rate (USD/TRY)` — monthly average  
-     - `Inflation Rate (CPI)` — Consumer Price Index (monthly change %)  
-   - Data aligned by **month-year** with the sales dataset.
+2. **Compare Asset Sensitivity**  
+   Evaluate whether gold or Bitcoin behaves more like a “safe-haven” asset during periods of elevated geopolitical tension.
+
+3. **Predict Volatility Using Machine Learning**  
+   Build models that use GPR and lagged market indicators to predict daily volatility.
+
+4. **Evaluate Market Dynamics During Crises**  
+   Identify whether Bitcoin’s response to global uncertainty has evolved in recent years compared to gold.
 
 ---
 
-## 🧹 Data Collection & Preparation
+## Motivation
 
-### Steps:
-1. **Importing Data**
-   - `Zara_sales_EDA.csv` loaded into a pandas DataFrame.
-   - `exchange_rate.csv` and `inflation_rate.csv` collected via open APIs (OECD & TCMB).  
+Global markets often react sharply to political instability, wars, and global uncertainty. Gold is historically known as a stable store of value, while Bitcoin’s role as a potential “digital gold” is still being debated.  
 
-2. **Merging Datasets**
-   - Merged on the `Date` (converted to Month-Year format) field.
-   - This created a unified dataset with both **micro (sales)** and **macro (economic)** variables.
+Understanding how these assets react to **geopolitical stress** provides valuable information for:
+- **Investors**, seeking portfolio hedging strategies.  
+- **Economists**, analyzing market psychology and capital flow.  
+- **Policy-makers**, assessing how global shocks impact new financial systems.
 
-3. **Cleaning & Feature Engineering**
-   - Missing values imputed using linear interpolation.  
-   - Created lag variables for `Exchange_Rate_t-1` and `Inflation_t-1` to capture delayed consumer response.  
-   - Converted categorical fields (e.g., `Category`, `Store_Location`) into dummy variables.  
-   - Scaled continuous variables using `MinMaxScaler`.
-
-4. **Storage**
-   - Final merged dataset exported as `zara_macro_merged.csv`.  
-   - All preprocessing steps documented in `data_cleaning.ipynb`.
+This project merges **macroeconomic theory and modern data analytics** to provide a quantitative view of these relationships.
 
 ---
 
-## 🔍 Data Analysis
+## Dataset
 
-### 1. Exploratory Data Analysis (EDA)
-EDA focused on understanding **how sales patterns evolve with macroeconomic changes**.
+This project integrates three real-world datasets:
 
-- **Trend Analysis:** Monthly sales compared with inflation and exchange rate trends.  
-- **Correlation Heatmap:** Examined relationships among `Total_Sales`, `Exchange_Rate`, and `Inflation`.  
-- **Scatterplots:** Visualized how sales volume fluctuates with exchange rate volatility.  
-- **Rolling Averages:** Used 3-month moving averages to smooth high-frequency noise.  
-- **Seasonal Decomposition:** Identified cyclical components in sales related to macroeconomic changes.
+### **1. btcusd_1-min_data.csv**
+- **Description:** Minute-level Bitcoin–USD price data, aggregated to daily averages.
+- **Key Features:**
+  - Open, Close, High, Low prices  
+  - Timestamp  
+  - Trading volume  
+- **Purpose:** Measure Bitcoin daily returns and volatility.
 
-#### Tools Used:
-- `pandas`, `numpy` — data manipulation  
-- `matplotlib`, `seaborn` — plotting  
-- `statsmodels` — time-series decomposition  
-- `scipy.stats` — correlation and significance testing  
+### **2. goldstock v2.csv**
+- **Description:** Daily or weekly gold price index data.
+- **Key Features:**
+  - Gold closing prices  
+  - Market index indicators  
+- **Purpose:** Provide traditional safe-haven benchmark.
 
----
-
-### 2. Hypothesis Testing
-
-Two hypotheses were designed to statistically validate the relationship between macroeconomic variables and Zara’s sales volume.
-
-- **H1:** *Exchange rate fluctuations have a significant impact on Zara’s total sales.*  
-  - Tested using **Pearson correlation** and **Granger causality** test.  
-  - *Result:* Significant negative correlation (r = -0.62, p < 0.05).  
-    → As USD/TRY exchange rate rises, total sales tend to decline.  
-
-- **H2:** *Inflation rate significantly affects purchasing behavior and sales volume.*  
-  - Tested using **OLS regression** and **t-tests** for slope coefficients.  
-  - *Result:* Inflation coefficient statistically significant (p < 0.01) —  
-    every 1% increase in CPI was associated with ~2.8% decrease in monthly sales volume (holding other factors constant).  
+### **3. data_gpr_export.xls**
+- **Description:** Global Geopolitical Risk (GPR) Index by Caldara & Iacoviello (Federal Reserve Board).
+- **Key Features:**
+  - Monthly geopolitical risk scores  
+  - Global aggregation from international news coverage  
+- **Source:** [https://www2.bc.edu/matteo-iacoviello/gpr.htm](https://www2.bc.edu/matteo-iacoviello/gpr.htm)
 
 ---
 
-### 3. Machine Learning Modeling
+## Hypotheses
 
-To predict future sales given macroeconomic conditions:
+1. **Geopolitical Risk and Gold Prices**  
+   - **H₀:** GPR levels have no significant effect on gold prices.  
+   - **H₁:** Increases in GPR are associated with higher gold prices.  
+   *(Tested via Pearson correlation and t-test)*
 
-#### Target:
-`Units_Sold` (or aggregated `Total_Sales`)
+2. **Geopolitical Risk and Bitcoin Volatility**  
+   - **H₀:** GPR has no significant effect on Bitcoin volatility.  
+   - **H₁:** Rising GPR increases Bitcoin volatility.  
+   *(Tested via variance tests and GARCH models)*
 
-#### Features:
-`Price`, `Category`, `Exchange_Rate`, `Inflation`, `Season`, `Store_Location`
+3. **Safe-Haven Comparison**  
+   - **H₀:** There is no difference between gold and Bitcoin’s reactions to geopolitical risk.  
+   - **H₁:** Gold reacts more strongly and consistently to GPR changes than Bitcoin.  
+   *(Tested via two-sample t-tests and rolling correlation analysis)*
 
-#### Models Implemented:
-- **Multiple Linear Regression** – baseline model for interpretability.  
-- **Random Forest Regressor** – captures nonlinear effects of economic variables.  
-- **XGBoost Regressor** – optimized predictive model.
-
-#### Evaluation Metrics:
-- Mean Absolute Error (MAE)  
-- Root Mean Square Error (RMSE)  
-- R² Score  
-
-#### Results:
-| Model | RMSE | R² | Key Insight |
-|-------|------|----|--------------|
-| Linear Regression | 0.241 | 0.71 | Good baseline, interpretable coefficients |
-| Random Forest | 0.189 | 0.82 | Best overall performance |
-| XGBoost | 0.196 | 0.80 | Slightly overfit small dataset |
-
-**Feature Importance (from Random Forest):**
-1. Exchange Rate (most influential)
-2. Inflation Rate
-3. Price
-4. Category
-5. Season  
-
-Interpretation: Macroeconomic pressure (inflation, currency depreciation) suppresses sales more strongly than internal factors like seasonality or category type.
+4. **Predictive Power of GPR**  
+   - **H₀:** Including GPR in machine learning models does not improve volatility prediction.  
+   - **H₁:** Adding GPR significantly improves volatility prediction accuracy.  
+   *(Evaluated via Random Forest/XGBoost model performance)*
 
 ---
 
-## 📈 Findings
+## Analysis Plan
 
-1. **Exchange Rate Impact**
-   - A rising exchange rate (weakening local currency) increases product prices and decreases units sold.  
-   - Sales drop sharply during months of currency spikes (especially post-import cost surges).  
+1. **Data Cleaning and Preprocessing**  
+   - Convert timestamps to daily frequency  
+   - Handle missing values and align datasets by date  
+   - Calculate daily returns and volatility measures  
 
-2. **Inflation Effects**
-   - Inflation weakens consumer purchasing power — visible slowdown in total sales during high CPI months.  
-   - Low-price segments (e.g., accessories, basics) perform relatively better under inflationary stress.  
+2. **Exploratory Data Analysis (EDA)**  
+   - Visualize trends and distributions  
+   - Compute rolling correlations (GPR vs. BTC/Gold)  
+   - Identify major spikes linked to global events  
 
-3. **Combined Effect**
-   - Exchange rate and inflation together explain **over 70% of the variance** in monthly sales trends.  
-   - Price elasticity increases during economic instability — consumers become more price-sensitive.  
+3. **Statistical Testing**  
+   - Correlation and hypothesis tests for each H₀/H₁  
+   - Granger causality tests for directional relationships  
 
-4. **Seasonal & Economic Interactions**
-   - Even in peak fashion seasons (spring/summer), sales volumes dipped when inflation exceeded 60% YoY, showing strong macroeconomic dominance.
+4. **Machine Learning Prediction**  
+   - Train regression models (Random Forest, XGBoost)  
+   - Evaluate prediction performance (MAE, R²)  
+   - Compare baseline vs. GPR-augmented models  
 
----
-
-## ⚙️ Limitations and Future Work
-
-### Limitations
-- The dataset includes limited store data (country-specific) — may not generalize to global Zara markets.  
-- Inflation and exchange rate data are monthly, while sales data may be daily — required aggregation introduces some temporal smoothing.  
-- Excluded marketing, promotions, and inventory levels, which could confound the results.  
-- Consumer sentiment or online engagement metrics (e.g., Google Trends, Twitter activity) not integrated yet.  
-
-### Future Work
-- Incorporate **social media sentiment** (e.g., Twitter or Google Trends data) as a proxy for consumer confidence.  
-- Extend analysis to **multi-country comparison** (e.g., Eurozone vs. Turkey vs. UK).  
-- Build an **interactive dashboard** (Streamlit/Power BI) to visualize sales vs. economic variables dynamically.  
-- Experiment with **LSTM time-series forecasting** for long-term macroeconomic impact prediction.
+5. **Visualization and Interpretation**  
+   - Time-series plots and volatility heatmaps  
+   - Feature importance rankings  
+   - Rolling correlation and crisis-period comparison  
 
 ---
 
-## 🧩 Repository Structure
+## Findings and Insights
 
+Preliminary analysis suggests that:
+- Gold consistently rises during geopolitical crises, confirming its safe-haven nature.  
+- Bitcoin reacts more to **market sentiment** and shows **increased volatility**, but not necessarily positive returns.  
+- The predictive value of GPR for Bitcoin volatility is moderate — useful but less stable than for gold.  
+- The relationship appears **time-dependent**, strengthening during global crises.
 
