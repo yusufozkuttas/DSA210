@@ -39,7 +39,7 @@ This project merges macroeconomic theory and modern data analytics to provide a 
 
 This project integrates three real-world datasets:
 
-### **1. btcusd_1-min_data.csv**
+### **1. Bitcoin History.cvs**
 - **Description:** Minute-level Bitcoin–USD price data, aggregated to daily averages.
 - **Key Features:**
   - Open, Close, High, Low prices  
