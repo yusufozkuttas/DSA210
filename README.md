@@ -104,3 +104,22 @@ Preliminary analysis suggests that:
 - The predictive value of GPR for Bitcoin volatility is moderate — useful but less stable than for gold.  
 - The relationship appears **time-dependent**, strengthening during global crises.
 
+## Machine Learning (ML) Implementation
+
+This stage applies machine learning methods to evaluate whether Geopolitical Risk (GPR) can predict the returns and volatility of gold and Bitcoin.
+
+**Models**
+ - Linear Regression is used as the baseline model for interpretability, while Random Forest Regressor is applied to capture non-linear relationships and analyze feature importance.   - Models are trained separately for gold and Bitcoin.
+
+**Targets**
+ - Daily log returns and rolling volatility measures.
+
+**Features**
+ - Geopolitical Risk Index (GPR) and its lagged values, lagged asset returns, and lagged volatility indicators.
+
+**Evaluation**
+ - Model performance is assessed using R² and RMSE with time-series–aware train/test splits to prevent look-ahead bias.
+
+**Key Finding**
+ - Gold demonstrates more stable and predictable responses to geopolitical risk, whereas Bitcoin exhibits higher volatility and weaker predictability, supporting gold’s stronger safe-haven role during periods of elevated geopolitical uncertainty.
+
